@@ -167,7 +167,7 @@ class Map(object):
         if mode == "bbox":  # catch special case bbox
             sea = proj.bounding_geometry(data, projected=True)
             sbbox = geom_to_bbox(sea)
-            sbbox.inflate(sbbox.width * data['padding'])
+            sbbox.inflate(sbbox.width * data['bounds']['padding'])
             return bbox_to_polygon(sbbox)
 
         bbox = BBox()
